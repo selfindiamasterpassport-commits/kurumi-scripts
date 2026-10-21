@@ -68,6 +68,7 @@ async function githubFetch(
   const url = `${GITHUB_API}/repos/${owner}/${name}${path}`;
 
   const headers: Record<string, string> = {
+    "User-Agent": "kurumi-scripts",
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
     ...((init?.headers as Record<string, string>) || {}),
