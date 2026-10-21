@@ -3,7 +3,7 @@ import { fetchExternalScripts } from "@/lib/external-scripts";
 import type { ExternalSourceFilter, ExternalSort } from "@/lib/external-types";
 
 const SOURCES: ExternalSourceFilter[] = ["all", "scriptblox", "rscripts"];
-const SORTS: ExternalSort[] = ["trending", "views", "newest"];
+const SORTS: ExternalSort[] = ["views", "newest"];
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
         totalPages: 1,
         query: q,
         source,
-        sort: sort || "trending",
+        sort: sort || "views",
       },
       { status: 500 }
     );

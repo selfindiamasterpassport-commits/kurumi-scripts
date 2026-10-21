@@ -1,7 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { isAdminAuthenticated } from "@/lib/auth";
-import { getSiteSettings, updateDiscordUrl, updateWebhookUrl } from "@/lib/scripts";
+import { getSiteSettings, updateDiscordUrl, updateWebhookUrl, updateYoutubeUrl } from "@/lib/scripts";
 import { discordSettingsSchema } from "@/lib/validation";
 
 export async function GET() {
@@ -32,6 +32,12 @@ export async function PUT(request: NextRequest) {
 
     if ("webhookUrl" in body) {
       const settings = await updateWebhookUrl(body.webhookUrl || "");
+      revalidatePath("/");
+      return NextResponse.json({ settings });
+    }
+
+    if ("youtubeUrl" in body) {
+      const settings = await updateYoutubeUrl(body.youtubeUrl || "");
       revalidatePath("/");
       return NextResponse.json({ settings });
     }

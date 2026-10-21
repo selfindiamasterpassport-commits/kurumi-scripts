@@ -1,10 +1,10 @@
-# Dark Alliance Script Store
+# Kurumi Scripts
 
 A red-themed Roblox script storefront with a secure admin panel. List script names and uses on the store; link out via Pastebin, Linkvertise, or direct URLs. When deployed on Vercel with GitHub configured, every post/edit/delete commits `data/scripts.json` to your repository.
 
 ## Features
 
-- **Public store** — Two modes: **Dark Alliance Scripts** (your curated list) and **Online Scripts** (live ScriptBlox + RScripts API search)
+- **Public store** — Two modes: **Kurumi Scripts** (your curated list) and **Online Scripts** (live ScriptBlox + RScripts API search)
 - **Filters** — Search, category, and free/paid on Alliance scripts; source filter (Both / ScriptBlox / RScripts) on online mode
 - **Script cards** — Name, description (uses), tags, category, pricing badge, featured highlight
 - **Download links** — Pastebin, Linkvertise, direct, or other
@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) — Admin at [http://localho
 | `ADMIN_PASSWORD` | Your admin login password |
 | `SESSION_SECRET` | Random string, 32+ characters |
 | `GITHUB_TOKEN` | [Classic PAT](https://github.com/settings/tokens) with **repo** scope (not expired; no extra spaces) |
-| `GITHUB_REPO` | `DarkAllianceKaushik/das` |
+| `GITHUB_REPO` | `KurumiKaushik/das` |
 | `GITHUB_BRANCH` | `main` (or your default branch) |
 | `GITHUB_DATA_PATH` | `data/scripts.json` |
 
@@ -59,7 +59,7 @@ Open [http://localhost:3000](http://localhost:3000) — Admin at [http://localho
 2. **Generate new token (classic)** — not fine-grained unless you grant Contents read/write on `das`
 3. Check the **repo** scope (full control of private repositories)
 4. Copy the token once (`ghp_...`) — paste into Vercel as `GITHUB_TOKEN` with **no spaces** before/after
-5. Set `GITHUB_REPO` to `DarkAllianceKaushik/das` and `GITHUB_BRANCH` to `main`
+5. Set `GITHUB_REPO` to `KurumiKaushik/das` and `GITHUB_BRANCH` to `main`
 6. **Redeploy** Vercel after changing env vars (Deployments → ⋯ → Redeploy)
 
 If you see **401 Bad credentials**, the token is wrong, expired, or revoked — create a new one and redeploy.
@@ -89,4 +89,4 @@ data/scripts.json # Script database (committed to GitHub)
 
 ## License
 
-Private use — Dark Alliance Script Store.
+Private use — Kurumi Scripts.

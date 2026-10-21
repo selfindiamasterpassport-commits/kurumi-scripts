@@ -8,7 +8,7 @@ const tips: Record<string, { title: string; messages: string[] }> = {
   "/": {
     title: "🏠 Home",
     messages: [
-      "Welcome to Dark Alliance! Browse curated scripts or switch to Online mode for live results!",
+      "Welcome to Kurumi! Browse curated scripts or switch to Online mode for live results!",
       "Use the search bar to find scripts fast. Try typing 'admin' or 'combat'!",
       "Click a script card to see details, copy code, or favorite it ⭐",
       "Toggle between Alliance and Online tabs to discover new scripts!",

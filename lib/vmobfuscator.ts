@@ -476,7 +476,7 @@ export function vmEncode(code: string): string {
     const pTbl = randomName(10);
     const eN = randomName(6);
     const parts: string[] = [
-      `--[[ Dark Alliance Bytecode VM ]]`,
+      `--[[ Kurumi Bytecode VM ]]`,
       `local ${eN}=_ENV or _G`,
       `local ${pTbl}={}`,
     ];

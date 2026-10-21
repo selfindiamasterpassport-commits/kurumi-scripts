@@ -66,7 +66,7 @@ export function Header() {
           </motion.div>
           <div>
             <p className="font-display text-sm font-bold uppercase tracking-widest text-alliance-red-bright">
-              Dark Alliance
+              Kurumi Scripts
             </p>
             <p className="text-[10px] text-alliance-muted/70 -mt-0.5">Script Store</p>
           </div>
@@ -110,6 +110,8 @@ export function Header() {
           size="md"
           className="text-alliance-muted hover:text-white sm:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
           onPress={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

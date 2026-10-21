@@ -23,7 +23,7 @@ const DEFAULT_CATEGORIES = [
   "Misc",
 ];
 
-const DEFAULT_SETTINGS = { discordUrl: "", webhookUrl: "" };
+const DEFAULT_SETTINGS = { discordUrl: "", webhookUrl: "", youtubeUrl: "" };
 
 function normalizeData(parsed: Partial<ScriptsData>): ScriptsData {
   const scripts = Array.isArray(parsed.scripts) ? parsed.scripts : [];
@@ -39,11 +39,15 @@ function normalizeData(parsed: Partial<ScriptsData>): ScriptsData {
     typeof parsed.settings?.webhookUrl === "string"
       ? parsed.settings.webhookUrl.trim()
       : "";
+  const youtubeUrl =
+    typeof parsed.settings?.youtubeUrl === "string"
+      ? parsed.settings.youtubeUrl.trim()
+      : "";
 
   return {
     scripts,
     categories,
-    settings: { discordUrl, webhookUrl: webhookUrl || undefined },
+    settings: { discordUrl, webhookUrl: webhookUrl || undefined, youtubeUrl: youtubeUrl || undefined },
   };
 }
 
@@ -221,6 +225,13 @@ export async function updateDiscordUrl(url: string): Promise<SiteSettings> {
   const data = await loadData();
   data.settings.discordUrl = url.trim();
   await saveData(data, "Update Discord invite link");
+  return data.settings;
+}
+
+export async function updateYoutubeUrl(url: string): Promise<SiteSettings> {
+  const data = await loadData();
+  data.settings.youtubeUrl = url.trim();
+  await saveData(data, "Update YouTube channel link");
   return data.settings;
 }
 

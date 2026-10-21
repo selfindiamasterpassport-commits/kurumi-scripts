@@ -1,7 +1,7 @@
 import { AdminPageClient } from "@/components/admin/AdminPageClient";
 
 export const metadata = {
-  title: "Admin | Dark Alliance Script Store",
+  title: "Admin | Kurumi Script Store",
 };
 
 export default function AdminPage() {

@@ -20,6 +20,7 @@ export interface Script {
 export interface SiteSettings {
   discordUrl: string;
   webhookUrl?: string;
+  youtubeUrl?: string;
 }
 
 export interface ScriptsData {

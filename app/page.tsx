@@ -1,6 +1,5 @@
 import { StoreSwitcher } from "@/components/StoreSwitcher";
 import { DiscordButton } from "@/components/DiscordButton";
-import { TrendingStrip } from "@/components/TrendingStrip";
 import { getScriptsData } from "@/lib/scripts";
 import { Flame } from "lucide-react";
 import { Chip } from "@heroui/react/chip";
@@ -18,7 +17,14 @@ export default async function HomePage() {
 
   return (
     <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-      <section className="mb-12 text-center">
+      <section className="relative mb-12 overflow-hidden rounded-3xl border border-alliance-border text-center">
+        <div
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-30 blur-sm"
+          style={{ backgroundImage: "url('/kurumi-hero.jpg')" }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-alliance-black/40 via-alliance-black/70 to-alliance-black" />
+        <div className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="mb-4 flex justify-center">
           <Chip
             variant="soft"
@@ -31,14 +37,14 @@ export default async function HomePage() {
           </Chip>
         </div>
         <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-          <span className="text-white">Dark Alliance</span>
+          <span className="text-white">Kurumi</span>
           <br />
           <span className="text-gradient">
             Script Store
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-alliance-muted sm:text-lg">
-          Browse Dark Alliance curated scripts or search live results from
+          Browse Kurumi curated scripts or search live results from
           ScriptBlox and RScripts — all in one place.
         </p>
 
@@ -68,11 +74,11 @@ export default async function HomePage() {
             </Card>
           ))}
         </div>
+        </div>
         <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-alliance-red/30 to-transparent" />
       </section>
 
       <div className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16">
-        <TrendingStrip />
         <Suspense fallback={<StoreGridSkeleton />}>
           <StoreSwitcher scripts={scripts} categories={categories} />
         </Suspense>

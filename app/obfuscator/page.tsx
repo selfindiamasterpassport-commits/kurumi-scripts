@@ -151,7 +151,7 @@ export default function ObfuscatorPage() {
               </Chip>
             </div>
             <h1 className="animate-fade-in font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl md:text-8xl">
-              <span className="text-white">Dark Alliance</span>
+              <span className="text-white">Kurumi</span>
               <br />
               <span className="bg-gradient-to-r from-alliance-red-bright via-alliance-red to-alliance-crimson bg-clip-text text-transparent">
                 Obfuscator

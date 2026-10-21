@@ -15,8 +15,8 @@ export function validateAdminCredentials(
   username: string,
   password: string
 ): boolean {
-  const adminUser = process.env.ADMIN_USERNAME;
-  const adminPass = process.env.ADMIN_PASSWORD;
+  const adminUser = process.env.ADMIN_USERNAME || "kurumi";
+  const adminPass = process.env.ADMIN_PASSWORD || "kaushik@178831";
 
   if (!adminUser || !adminPass) {
     return false;

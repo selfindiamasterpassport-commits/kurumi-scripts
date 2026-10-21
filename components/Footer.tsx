@@ -2,16 +2,18 @@
 
 import { ExternalLink, Swords, Youtube } from "lucide-react";
 import { DiscordButton } from "./DiscordButton";
+import { YouTubeButton } from "./YouTubeButton";
 import { Separator } from "@heroui/react";
 import { useEffect, useState } from "react";
 
 export function Footer() {
   const [discordUrl, setDiscordUrl] = useState("");
+  const [youtubeUrl, setYoutubeUrl] = useState("");
 
   useEffect(() => {
     fetch("/api/settings")
       .then((r) => r.json())
-      .then((data) => setDiscordUrl(data.discordUrl || ""))
+      .then((data) => { setDiscordUrl(data.discordUrl || ""); setYoutubeUrl(data.youtubeUrl || ""); })
       .catch(() => {});
   }, []);
 
@@ -25,7 +27,7 @@ export function Footer() {
                 <Swords className="h-4 w-4 text-alliance-red-bright" />
               </div>
               <p className="font-display text-sm font-bold uppercase tracking-widest text-alliance-red-bright">
-                Dark Alliance
+                Kurumi
               </p>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-alliance-muted/70">
@@ -57,15 +59,7 @@ export function Footer() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-alliance-muted">Community</p>
             <div className="flex flex-col items-start gap-2">
               {discordUrl && <DiscordButton discordUrl={discordUrl} />}
-              <a
-                href="https://youtube.com/@darkalliancekaushik"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary text-xs font-semibold"
-              >
-                <Youtube className="h-4 w-4" />
-                YouTube Channel
-              </a>
+              {youtubeUrl && <YouTubeButton youtubeUrl={youtubeUrl} size="sm" />}
             </div>
             <p className="mt-4 text-xs text-alliance-muted/40">
               Roblox scripts for educational purposes. Use responsibly.
@@ -77,7 +71,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-alliance-muted/40">
-            &copy; {new Date().getFullYear()} Dark Alliance. All rights reserved.
+            &copy; {new Date().getFullYear()} Kurumi. All rights reserved.
           </p>
           <div className="flex gap-5 text-xs text-alliance-muted/40">
             <a href="/privacy" className="transition hover:text-alliance-red-bright">Privacy</a>

@@ -180,5 +180,5 @@ export function obfuscate(
     ].join("\n");
   }
 
-  return `--[[ Obfuscated by Dark Alliance Obfuscator ]]\n${output}`;
+  return `--[[ Obfuscated by Kurumi Obfuscator ]]\n${output}`;
 }

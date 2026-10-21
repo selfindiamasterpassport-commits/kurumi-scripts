@@ -15,7 +15,6 @@ import {
 import { Button, Card, Chip, InputGroup, Pagination, Select, Label, ListBox } from "@heroui/react";
 
 const SORT_OPTIONS: { value: ExternalSort; label: string }[] = [
-  { value: "trending", label: "Trending" },
   { value: "views", label: "Most Viewed" },
   { value: "newest", label: "Latest" },
 ];
@@ -26,7 +25,7 @@ export function OnlineScriptsClient() {
   const [query, setQuery] = useState("");
   const [game, setGame] = useState("");
   const [source, setSource] = useState<ExternalSourceFilter>("all");
-  const [sort, setSort] = useState<ExternalSort>("trending");
+  const [sort, setSort] = useState<ExternalSort>("views");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);

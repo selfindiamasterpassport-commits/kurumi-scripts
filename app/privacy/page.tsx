@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     <div className="relative z-10 mx-auto max-w-3xl px-4 py-14 sm:px-6">
       <h1 className="font-display text-3xl font-bold">Privacy Policy</h1>
       <div className="mt-6 space-y-4 text-sm leading-relaxed text-alliance-muted">
-        <p>Dark Alliance Script Store (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy.</p>
+        <p>Kurumi Script Store (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy.</p>
         <h2 className="font-display text-lg font-bold text-white">Information We Collect</h2>
         <p>We collect minimal information necessary to operate the store. This may include anonymous usage data via browser localStorage for features like favorites and view tracking. No personal data is sent to our servers.</p>
         <h2 className="font-display text-lg font-bold text-white">How We Use Data</h2>

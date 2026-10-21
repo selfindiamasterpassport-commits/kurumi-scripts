@@ -49,7 +49,7 @@ export function isGitHubConfigured(): boolean {
 function parseRepo(repo: string): { owner: string; name: string } {
   const [owner, name] = repo.split("/");
   if (!owner || !name) {
-    throw new Error("GITHUB_REPO must be in owner/repo format (e.g. DarkAllianceKaushik/das)");
+    throw new Error("GITHUB_REPO must be in owner/repo format (e.g. KurumiKaushik/das)");
   }
   return { owner, name };
 }

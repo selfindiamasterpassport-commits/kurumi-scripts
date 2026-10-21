@@ -1,0 +1,7 @@
+name = "dark-alliance-script-store"
+compatibility_date = "2026-10-21"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://das.pages.dev"

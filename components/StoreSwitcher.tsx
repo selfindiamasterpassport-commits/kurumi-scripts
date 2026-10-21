@@ -31,7 +31,7 @@ export function StoreSwitcher({ scripts, categories }: StoreSwitcherProps) {
           >
             <Tabs.Tab id="alliance" className="flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">
               <Swords className="h-4 w-4" />
-              Dark Alliance Scripts
+              Kurumi Scripts
               <Tabs.Indicator />
             </Tabs.Tab>
             <Tabs.Tab id="online" className="flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">

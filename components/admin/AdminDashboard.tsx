@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 import { ScriptForm } from "./ScriptForm";
 import { DiscordSettings } from "./DiscordSettings";
+import { YoutubeSettings } from "./YoutubeSettings";
 import type { Script } from "@/lib/types";
 
 export function AdminDashboard() {
@@ -26,6 +27,7 @@ export function AdminDashboard() {
   const [deleteError, setDeleteError] = useState("");
   const [discordUrl, setDiscordUrl] = useState("");
   const [webhookUrl, setWebhookUrl] = useState("");
+  const [youtubeUrl, setYoutubeUrl] = useState("");
   const [search, setSearch] = useState("");
   const [copyState, setCopyState] = useState<Record<string, boolean>>({});
 
@@ -44,6 +46,7 @@ export function AdminDashboard() {
       const settingsData = await settingsRes.json();
       setDiscordUrl(settingsData.settings?.discordUrl || "");
       setWebhookUrl(settingsData.settings?.webhookUrl || "");
+      setYoutubeUrl(settingsData.settings?.youtubeUrl || "");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to load data");
     } finally {
@@ -139,6 +142,11 @@ export function AdminDashboard() {
       <DiscordSettings
         initialUrl={discordUrl}
         initialWebhookUrl={webhookUrl}
+        onSaved={loadData}
+      />
+
+      <YoutubeSettings
+        initialUrl={youtubeUrl}
         onSaved={loadData}
       />
 
