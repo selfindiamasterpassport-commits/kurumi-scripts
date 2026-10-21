@@ -1,10 +1,21 @@
-import { promises as fs } from "fs";
-import path from "path";
-import {
-  isGitHubRepoConfigured,
-  readFileFromGitHub,
-  writeFileToGitHub,
-} from "./github";
+// fs/path are only used for local dev fallback; load lazily for edge compatibility
+let _fs: typeof import("fs").promises | null = null;
+let _path: typeof import("path") | null = null;
+async function getFs() {
+  if (!_fs) {
+    const m = await import("fs");
+    _fs = m.promises;
+  }
+  return _fs!;
+}
+async function getPath() {
+  if (!_path) {
+    _path = await import("path");
+  }
+  return _path!;
+}
+
+const DATA_PATH = "data/scripts.json";
 import type {
   Script,
   ScriptInput,
@@ -52,12 +63,18 @@ function normalizeData(parsed: Partial<ScriptsData>): ScriptsData {
 }
 
 async function readLocalFile(): Promise<ScriptsData> {
-  const raw = await fs.readFile(DATA_PATH, "utf-8");
+  const fs = await getFs();
+  const path = await getPath();
+  const dataPath = path.join(process.cwd(), "data", "scripts.json");
+  const raw = await fs.readFile(dataPath, "utf-8");
   return normalizeData(JSON.parse(raw));
 }
 
 async function writeLocalFile(data: ScriptsData): Promise<void> {
-  await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
+  const fs = await getFs();
+  const path = await getPath();
+  const dataPath = path.join(process.cwd(), "data", "scripts.json");
+  await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf-8");
 }
 
 let githubSha: string | undefined;

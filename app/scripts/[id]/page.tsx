@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { notFound } from "next/navigation";
 import { getAllScripts } from "@/lib/scripts";
 import { ScriptDetailClient } from "./client";

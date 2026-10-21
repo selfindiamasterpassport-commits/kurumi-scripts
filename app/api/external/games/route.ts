@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from "next/server";
 import { searchScriptBloxGames } from "@/lib/external-scripts";
 
