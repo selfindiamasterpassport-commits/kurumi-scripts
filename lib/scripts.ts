@@ -1,7 +1,10 @@
 import { promises as fs } from "fs";
 import path from "path";
-
-const DATA_PATH = path.join(process.cwd(), "data", "scripts.json");
+import {
+  isGitHubRepoConfigured,
+  readFileFromGitHub,
+  writeFileToGitHub,
+} from "./github";
 import type {
   Script,
   ScriptInput,
@@ -9,6 +12,7 @@ import type {
   SiteSettings,
 } from "./types";
 
+const DATA_PATH = path.join(process.cwd(), "data", "scripts.json");
 
 const DEFAULT_CATEGORIES = [
   "Admin",
