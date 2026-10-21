@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from "next/server";
 import { fetchExternalScripts } from "@/lib/external-scripts";
 import type { ExternalSourceFilter, ExternalSort } from "@/lib/external-types";
