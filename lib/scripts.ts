@@ -23,7 +23,6 @@ import type {
   SiteSettings,
 } from "./types";
 
-const DATA_PATH = path.join(process.cwd(), "data", "scripts.json");
 
 const DEFAULT_CATEGORIES = [
   "Admin",
