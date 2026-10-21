@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getAllScripts } from "@/lib/scripts";
 import { ScriptDetailClient } from "./client";
 
-export const revalidate = 600;
+export const dynamic = "force-dynamic";
 
 export default async function ScriptDetailPage(props: { params: Promise<{ id: string }> }) {
   const resolved = await props.params;

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Executor } from "@/lib/executor-types";
 import { ExecutorDetailClient } from "./client";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 async function fetchFromWEAO(): Promise<Executor[]> {
   try {

@@ -7,7 +7,7 @@ import { Card } from "@heroui/react/card";
 import { StoreGridSkeleton } from "@/components/LoadingSkeleton";
 import { Suspense } from "react";
 
-export const revalidate = 600;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const { scripts, categories, settings } = await getScriptsData();

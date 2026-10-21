@@ -1,7 +1,7 @@
 import type { Executor } from "@/lib/executor-types";
 import { ExecutorPageClient } from "./client";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 async function fetchFromWEAO(): Promise<Executor[]> {
   try {
