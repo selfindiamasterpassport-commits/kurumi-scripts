@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { notFound } from "next/navigation";
 import { fetchExternalScriptById } from "@/lib/external-scripts";
 import { ExternalScriptDetailClient } from "@/components/ExternalScriptDetailClient";
