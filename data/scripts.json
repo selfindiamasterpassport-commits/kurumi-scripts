@@ -1,5 +1,21 @@
 {
-  "scripts": [],
+  "scripts": [
+    {
+      "id": "script-1792576763686-zpf8m42",
+      "name": "ZZTEST delete me",
+      "description": "Temporary test script for write verification.",
+      "category": "Utility",
+      "tags": [
+        "test"
+      ],
+      "pricing": "free",
+      "downloadUrl": "https://example.com/test.lua",
+      "linkType": "direct",
+      "featured": false,
+      "createdAt": "2026-10-21T09:59:23.686Z",
+      "updatedAt": "2026-10-21T09:59:23.686Z"
+    }
+  ],
   "categories": [
     "Admin",
     "Combat",
