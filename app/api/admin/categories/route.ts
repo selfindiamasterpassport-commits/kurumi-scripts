@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { isAdminAuthenticated } from "@/lib/auth";

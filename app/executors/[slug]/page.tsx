@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { notFound } from "next/navigation";
 import type { Executor } from "@/lib/executor-types";
 import { ExecutorDetailClient } from "./client";
